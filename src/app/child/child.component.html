@@ -1,0 +1,12 @@
+<p>child works!</p>
+<ng-container *ngFor="let value of values; let i = index">
+  <div [attr.id]="'v' + i">
+    <ng-container
+      *ngTemplateOutlet="tpl; context: { value: this.value }"
+    ></ng-container>
+  </div>
+</ng-container>
+<ng-template #tpl let-value="value">
+  {{ value.name }}<br />
+  {{ value.description }}
+</ng-template>
